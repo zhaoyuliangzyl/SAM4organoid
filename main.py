@@ -12,7 +12,7 @@ import pandas as pd
 parser = argparse.ArgumentParser(description='Process microscopy images and save results')
 parser.add_argument('-i','--input', type=str, help='Path to the directory containing PNG images')
 parser.add_argument('-o','--output', type=str, help='Path to the directory containing segmentation masks and cell properties')
-args = parser.parse_ars()
+args = parser.parse_args()
 
 
 fpath = args.input

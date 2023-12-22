@@ -63,8 +63,8 @@ def remove_concentric_masks(mask_image):
         contour, _ = cv2.findContours(mask_one, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         if len(contour) > 0:
             largest_contour = max(contour, key=cv2.contourArea)
-
-            mask_image = cv2.drawContours(mask_image, [largest_contour], -1, (np.int(cell_values[i])), thickness=cv2.FILLED)
+            color = (int(cell_values[i]),)  # 用于灰度强度的单个值
+            mask_image = cv2.drawContours(mask_image, [largest_contour], -1, color, thickness=cv2.FILLED)
 
 
 
